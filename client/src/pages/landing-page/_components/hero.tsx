@@ -8,8 +8,8 @@ export const HeroSection = () => {
         <div className="w-full flex flex-col gap-10">
           <h1>Café Iriya</h1>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-            labore et dolore magna aliqua
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua
           </p>
 
           <div className="flex gap-5">
@@ -18,8 +18,8 @@ export const HeroSection = () => {
           </div>
         </div>
 
-        <div className="w-full">
-          <img src={coffeeCup} alt="Coffee Cup" />
+        <div className="w-full flex justify-center">
+          <img src={coffeeCup} alt="Coffee Cup" width={500} />
         </div>
       </div>
     </section>
