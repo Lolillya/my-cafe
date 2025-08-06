@@ -1,0 +1,36 @@
+services:
+  api:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    ports:
+      - "5266:5266"
+    volumes:
+      - ./server:/app      # So code changes reflect in container
+      - ~/.nuget/packages:/root/.nuget/packages:ro
+    restart: unless-stopped
+
+  client:
+    build:
+      context: ./client/
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./client:/app
+    restart: unless-stopped
+
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: sqlserver
+    environment:
+      SA_PASSWORD: "Drop 2 hard"
+      ACCEPT_EULA: "Y"
+    ports:
+      - "1433:1433"
+    volumes:
+      - sqlserverdata:/var/opt/mssql
+    restart: unless-stopped
+
+volumes:
+  sqlserverdata:
