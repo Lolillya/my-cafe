@@ -2,10 +2,16 @@
 export const notFoundComponent = () => <div>Page not found</div>;
 /// <reference types="vite/client" />
 import type { ReactNode } from 'react';
-import { Outlet, createRootRoute, HeadContent, Scripts } from '@tanstack/react-router';
+import {
+  Outlet,
+  createRootRoute,
+  HeadContent,
+  Scripts,
+} from '@tanstack/react-router';
 import { NavBar } from '@/components/navbar';
 
 import appCss from '@/App.css?url';
+import { Footer } from '@/components/footer';
 export const Route = createRootRoute({
   head: () => ({
     meta: [
@@ -30,6 +36,7 @@ function RootComponent() {
     <RootDocument>
       <NavBar />
       <Outlet />
+      <Footer />
     </RootDocument>
   );
 }

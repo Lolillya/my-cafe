@@ -27,6 +27,10 @@
     @apply capitalize;
   }
 
+  input {
+    @apply p-3 rounded-sm border-surface border min-w-[1rem] w-fit;
+  }
+
   /* HEADING STYLES */
   h1 {
     @apply text-8xl font-bold text-primary leading-tight tracking-tight capitalize;
