@@ -2,7 +2,7 @@ import Logo from '@/assets/logo.png';
 
 export const Footer = () => {
   return (
-    <footer className="bg-background">
+    <footer className="">
       <nav className="container">
         <div className="py-14">
           <div className="flex justify-between items-center">
