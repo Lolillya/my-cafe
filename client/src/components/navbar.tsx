@@ -8,7 +8,7 @@ export const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="w-full bg-background">
+    <header className="w-full bg-background absolute sm:block">
       <nav
         className={`container sm:py-6 py-4 bg-white sm:bg-background sm:shadow-none transition-all duration-300 ease-in-out overflow-hidden shadow-md `}
       >
@@ -18,7 +18,11 @@ export const NavBar = () => {
           </div>
 
           <div className="block sm:hidden" onClick={() => setIsOpen(!isOpen)}>
-            {isOpen ? <XIcon width={32} height={32} /> : <MenuIcon width={32} height={32} />}
+            {isOpen ? (
+              <XIcon width={32} height={32} />
+            ) : (
+              <MenuIcon width={32} height={32} />
+            )}
           </div>
 
           {/* Desktop Navigation */}
@@ -51,25 +55,34 @@ export const NavBar = () => {
         </section>
 
         {/* Mobile Navigation */}
-        <div className={`sm:hidden transition-all duration-300 ease-in-out overflow-hidden ${
-          isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
-        }`}>
+        <div
+          className={`sm:hidden transition-all duration-300 ease-in-out overflow-hidden ${
+            isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+          }`}
+        >
           <div className="pt-6 pb-4 space-y-4">
             <ul className="space-y-4 block">
               <li className="group">
-                <span className="cursor-pointer text-lg font-medium hover:text-[var(--color-primary)] transition-colors duration-300">cafe menu</span>
+                <span className="cursor-pointer text-lg font-medium hover:text-[var(--color-primary)] transition-colors duration-300">
+                  cafe menu
+                </span>
               </li>
               <li className="group">
-                <span className="cursor-pointer text-lg font-medium hover:text-[var(--color-primary)] transition-colors duration-300">about us</span>
+                <span className="cursor-pointer text-lg font-medium hover:text-[var(--color-primary)] transition-colors duration-300">
+                  about us
+                </span>
               </li>
               <li className="group">
-                <span className="cursor-pointer text-lg font-medium hover:text-[var(--color-primary)] transition-colors duration-300">find us</span>
+                <span className="cursor-pointer text-lg font-medium hover:text-[var(--color-primary)] transition-colors duration-300">
+                  find us
+                </span>
               </li>
               <li className="group">
-                <span className="cursor-pointer text-lg font-medium hover:text-[var(--color-primary)] transition-colors duration-300">catering</span>
+                <span className="cursor-pointer text-lg font-medium hover:text-[var(--color-primary)] transition-colors duration-300">
+                  catering
+                </span>
               </li>
             </ul>
-            
           </div>
         </div>
       </nav>

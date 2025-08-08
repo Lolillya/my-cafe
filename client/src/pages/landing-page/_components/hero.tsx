@@ -3,8 +3,8 @@ import coffeeCup from '@/assets/coffee-cup.png';
 
 export const HeroSection = () => {
   return (
-    <section className="bg-background">
-      <div className="container flex items-center">
+    <section className="bg-background py-20">
+      <div className="container flex items-center sm:flex-flex-col">
         <div className="w-full flex flex-col gap-10">
           <h1>Café Iriya</h1>
           <p>
